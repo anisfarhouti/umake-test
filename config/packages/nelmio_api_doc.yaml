@@ -1,0 +1,46 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: Foodtruck API
+            description: Our owesome booking API for foodtrucks
+            version: 1.0.0
+        paths:
+            /book:
+                post:
+                    summary: Book a location for a foodtruck
+                    requestBody:
+                        description: Book a location
+                        required: true
+                        content:
+                            application/json:
+                                schema:
+                                    type: object
+                                    properties:
+                                        foodtruck_id:
+                                            type: string
+                                            description: foodtruck id
+                                        reservation_date:
+                                            type: string
+                                            description: date of reservation in format (d/m/Y)
+                                            default: d/m/Y
+                    responses:
+                        '201':
+                            description: Reservation success
+                            content:
+                                application/json:
+                        '400':
+                            description: Bad request (missing foodtruck_id or reservation_date)
+                            content:
+                                application/json:
+                        '404':
+                            description: Foodtruck not found
+                            content:
+                                application/json:
+                        '409':
+                            description: Conflict
+                            content:
+                                application/json:
+
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc

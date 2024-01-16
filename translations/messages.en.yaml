@@ -1,0 +1,7 @@
+date.past.or.today: You can't book for today's date, or any earlier!
+foodtruck.not.found: Foodtruck with id {foodTruckId} was not found!
+location.unavailable: No location available, try with another date
+week.reservation.restriction: Only one reservation per week is authorized
+reservation.success: Location {location} successefuly booked for date {dateReservation}
+field.mandatory: This field is mandatory
+field.date.format: Please provide a valid date format (d/m/Y)
